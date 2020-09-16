@@ -5,6 +5,7 @@ from keras.models import model_from_json
 import webbrowser
 import os
 import time
+import matplotlib.pyplot as plt
 # import subprocess
 import sendKeys_HMI as sK
 # import mnist_handrecog

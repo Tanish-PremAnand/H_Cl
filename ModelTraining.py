@@ -1,9 +1,9 @@
-
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from PIL import Image
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix
 from keras.models import Sequential
 from keras.layers.convolutional import Conv2D, MaxPooling2D
 from keras.layers import Dense, Flatten
@@ -63,7 +63,6 @@ X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=ts, random_sta
 es = EarlyStopping(monitor="val_accuracy", mode='max', patience=3, verbose=1)
 mc = ModelCheckpoint('best_model.h5', monitor='val_accuracy', mode='max', verbose=1, save_best_only=True)
 
-
 model = Sequential()
 model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
 model.add(BatchNormalization())
@@ -77,10 +76,7 @@ model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dense(25, activation='softmax'))
 
-
 model.compile(optimizer='Adadelta', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
-
-
 
 print(model.summary())
 
@@ -93,12 +89,15 @@ predictions = model.predict_classes(X_test)
 
 y_pred = predictions
 
-# cnfsnmtrx = pd.DataFrame(metrics.confusion_matrix(y_test, y_pred))
+cnfsnmtrx = pd.DataFrame(confusion_matrix(y_test, y_pred))
 
+print(cnfsnmtrx)
+df = pd.DataFrame(cnfsnmtrx)
+
+df.to_excel("Model_ConfusionMatrix.xlsx", index=False)
 # Save model and weights to disk
 model_json = model.to_json()
 with open("H_Cl_model_1.json", 'w') as json_file:
     json_file.write(model_json)
 model.save_weights("H_Cl_model_weights_1.h5")
 print('model saved to local storage')
-
