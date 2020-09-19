@@ -73,7 +73,7 @@ cv2.destroyAllWindows()
 
 img_arr = np.array(img_crop)
 img_arr = img_arr.reshape(1, 28, 28, 1)
-loaded_model.compile(loss='sparse_categorical_crossentropy', optimizer='adaDelta', metrics=['accuracy'])
+# loaded_model.compile(loss='sparse_categorical_crossentropy', optimizer='adaDelta', metrics=['accuracy'])
 pred = loaded_model.predict_classes(img_arr)
 print(pred)
 
