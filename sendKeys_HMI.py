@@ -116,7 +116,7 @@ def AltTab():
     ReleaseKey(VK_MENU)  # Alt~
 
 
-def newTab(): # works
+def newTab():  # works
     PressKey(VK_LWIN)
     PressKey(VK_E)
     #     time.sleep(2)
@@ -147,7 +147,7 @@ def lockScr():
     ReleaseKey(VK_L)
 
 
-def taskManager():# works perfectly
+def taskManager():  # works perfectly
     PressKey(VK_LCTRL)
     PressKey(VK_LSHFT)
     PressKey(VK_ESC)
@@ -156,7 +156,7 @@ def taskManager():# works perfectly
     ReleaseKey(VK_ESC)
 
 
-def tabChangeScrShot(): # Works perfectly
+def tabChangeScrShot():  # Works perfectly
     AltTab()
     time.sleep(0.5)
     PressKey(VK_LWIN)
@@ -166,7 +166,8 @@ def tabChangeScrShot(): # Works perfectly
     ReleaseKey(VK_LSHFT)
     ReleaseKey(VK_S)
 
-def winSearch(): # Works perfectly
+
+def winSearch():  # Works perfectly
     PressKey(VK_LWIN)
     PressKey(VK_S)
     ReleaseKey(VK_LWIN)

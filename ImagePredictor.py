@@ -86,17 +86,25 @@ for a in pred:
 
 if ret_val == 0:
     os.system("start ms-settings:")
-    print(sign_lang_dict[0], "predicted")
+    # print(sign_lang_dict[0], "predicted")
 elif ret_val == 1:
     webbrowser.get().open("http://google.com")
-    print(sign_lang_dict[1], "predicted")
+    # print(sign_lang_dict[1], "predicted")
 elif ret_val == 2:
     os.startfile('microsoft.windows.camera:')
     # subprocess.run('start microsoft.windows.camera', shell=True)
+    # print(sign_lang_dict[1], "predicted")
 elif ret_val == 3:
     sK.bringDown()
     time.sleep(1)
     sK.refresh()
-
+elif ret_val == 5:
+    sK.newTab()
+elif ret_val == 14:
+    sK.taskManager()
+elif ret_val == 15:
+    sK.tabChangeScrShot()
 else:
     print("wrong!")
+
+print(sign_lang_dict[ret_val], "classified!")

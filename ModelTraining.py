@@ -90,7 +90,7 @@ predictions = model.predict_classes(X_test)
 y_pred = predictions
 
 cnfsnmtrx = pd.DataFrame(confusion_matrix(y_test, y_pred))
-
+print("Confusion Matrix")
 print(cnfsnmtrx)
 df = pd.DataFrame(cnfsnmtrx)
 
