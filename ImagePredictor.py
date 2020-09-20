@@ -100,15 +100,16 @@ elif ret_val == 3:
     sK.refresh()
 elif ret_val == 5:
     sK.newTab()
+elif ret_val == 7:
+    sK.sysInfo()
 elif ret_val == 14:
     sK.taskManager()
 elif ret_val == 15:
     sK.tabChangeScrShot()
 elif ret_val == 16:
     sK.winSearch()
-# elif ret_val == 23:
-#     sK.sysInfo()
+
 else:
     print("wrong!")
 
-print(sign_lang_dict[ret_val], "classified!")
+print(ret_val, sign_lang_dict[ret_val], "classified!")
