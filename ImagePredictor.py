@@ -104,6 +104,10 @@ elif ret_val == 14:
     sK.taskManager()
 elif ret_val == 15:
     sK.tabChangeScrShot()
+elif ret_val == 16:
+    sK.winSearch()
+# elif ret_val == 23:
+#     sK.sysInfo()
 else:
     print("wrong!")
 

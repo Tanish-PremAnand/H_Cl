@@ -28,6 +28,7 @@ VK_REFRESH = 0x74
 VK_LCTRL = 0x11
 VK_LSHFT = 0xA0
 VK_ESC = 0x1B
+VK_PAUSE = 0x13
 # C struct definitions
 
 wintypes.ULONG_PTR = wintypes.WPARAM
@@ -135,7 +136,11 @@ def refresh():
     PressKey(VK_REFRESH)
     ReleaseKey(VK_REFRESH)
 
-
+def sysInfo():
+    PressKey(VK_LWIN)
+    PressKey(VK_PAUSE)
+    ReleaseKey(VK_LWIN)
+    ReleaseKey(VK_PAUSE)
 def lockScr():
     print("sdsl")
     PressKey(VK_LWIN)
@@ -143,7 +148,7 @@ def lockScr():
     # ReleaseKey(VK_LWIN)
     # time.sleep(2)
     # PressKey(VK_LWIN)
-    # ReleaseKey(VK_LWIN)
+    ReleaseKey(VK_LWIN)
     ReleaseKey(VK_L)
 
 
