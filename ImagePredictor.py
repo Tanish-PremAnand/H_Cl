@@ -85,10 +85,10 @@ for a in pred:
 # for a in sign_lang_dict:
 
 if ret_val == 0:
-    webbrowser.get().open("http://google.com")
+    os.system("start ms-settings:")
     print(sign_lang_dict[0], "predicted")
 elif ret_val == 1:
-    os.system("start ms-settings:")
+    webbrowser.get().open("http://google.com")
     print(sign_lang_dict[1], "predicted")
 elif ret_val == 2:
     os.startfile('microsoft.windows.camera:')
